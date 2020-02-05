@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous">
+        </script>
+        <style>
+            .accordion_title {
+                background-color: rgb(216, 214, 214);
+                color: black;
+                margin: auto 0;
+                border: 1px solid rgb(216, 214, 214);
+                cursor: pointer;
+                margin: 5px;
+                padding: 5px;
+            }
+            .accordion_body {
+                display: none;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                align-items: center;
+                border: 1px solid rgb(216, 214, 214);
+                color: black;
+                margin: 5px;
+                padding: 5px;
+            }
+            @media screen and (min-width: 769px) {
+                .pokemon_image {
+                    width: 50%;
+                    max-width: 500px;
+                    border: 1px solid grey;
+                }
+            }
+            @media screen and (max-width: 768px) {
+                .pokemon_image {
+                    width: 90%;
+                    max-width: 500px;
+                    border: 1px solid grey;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="accordion">
+            <div>
+                <div class="accordion_title">Dracaufeu</div>
+                <div class="accordion_body">
+                    <div>
+                        <img class="pokemon_image" src="https://www.pokebip.com/pokedex-images/artworks/6.png"/>
+                    </div>
+                    <div>
+                        <span>Description de Dracaufeu</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="accordion_title">Pikachu</div>
+                <div class="accordion_body">
+                    <div>
+                        <img class="pokemon_image" src="https://i.pinimg.com/originals/ee/e7/5d/eee75d6e875e7e205a1394aaa96fad12.png"/>
+                    </div>
+                    <div>
+                        <span>Description de Pikatchu</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        $('#accordion .accordion_title').click(function() {
+            // reset background color of all elements
+            $('#accordion .accordion_title').css('background-color', 'rgb(216, 214, 214)');
+            $('#accordion .accordion_title').css('color', 'black');
+            // hide all elements
+            $('#accordion .accordion_body').css('display', 'none');
+            // set the background color of the selected element
+            $(this).css('background-color', 'blue');
+            $(this).css('color', 'white');
+            // show the body of the selected element
+            $(this).next().css('display', 'flex');
+        })
+    </script>
+</html>
